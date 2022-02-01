@@ -1,0 +1,45 @@
+
+<h2 [ngClass]="{'strike':!todo.active}"></h2>
+
+<div *ngIf="isUpdated == 0; else elseBlock">
+<div class="post">
+  <div class="post__avatar">
+    <img
+      src="{{imgUrl}}{{todo.file_pic}}"
+      alt=""
+    />
+  </div>
+
+  <div class="post__body">
+    <div class="post__header">
+      <div class="post__headerText">
+        <h3>
+          {{todo.title}}
+          <span class="post__headerSpecial"
+            ><span class="material-icons post__badge"> verified </span>@somanathg</span
+          >
+        </h3>
+      </div>
+      <div class="post__headerDescription">
+        <p>{{todo.desc}}-   {{imgUrl}}{{todo.file_pic}}</p>
+      </div>
+    </div>
+    <img
+      src="{{imgUrl}}{{todo.file_pic}}"
+      alt=""
+    />
+    <div class="post__footer">
+      <span class="material-icons"> repeat </span>
+      <span class="material-icons"> favorite_border </span>
+      <span class="material-icons"> publish </span>
+    </div>
+  </div>
+</div>
+
+</div>
+<ng-template #elseBlock>
+</ng-template>
+
+
+
+ 

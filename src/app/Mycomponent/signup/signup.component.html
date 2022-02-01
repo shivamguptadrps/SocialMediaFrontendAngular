@@ -1,0 +1,78 @@
+<h1>Register Yourself</h1>
+<form [formGroup]="userdetails" (ngSubmit)="signup()">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-10">
+                <label for="fname">Username</label>
+            </div>
+            <div class="col-90">
+                <input type="text" id="fname" formControlName="username" placeholder="Enter your first name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <label for="lname">Fullname</label>
+            </div>
+            <div class="col-90">
+                <input type="text" id="lname" formControlName="userfullname" placeholder="Enter your last name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <label for="email">Email:</label>
+            </div>
+            <div class="col-90">
+                <input type="email" id="email" formControlName="email" placeholder="it should contain @,.">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <label for="mobile">Mobile:</label>
+            </div>
+            <div class="col-90">
+                <input type="tel" id="mobile" formControlName="usern_mobile_no" placeholder="only 10 digits are allowed">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <label for="dob">Date Of Birth:</label>
+            </div>
+            <div class="col-90">
+                <input type="Date" id="dob" name="dob">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-10">
+                <label for="city"> Password</label>
+            </div>
+            <div class="col-90">
+                <input type="text" id="city" formControlName="password" maxlength="10">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <label for="pincode">Confirm Password</label>
+            </div>
+            <div class="col-90">
+                <input type="password" id="pin" formControlName="cnfpassword" maxlength="6">
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-10">
+                <label for="pincode">Profile Pic</label>
+            </div>
+            <div class="col-90">
+                <input type="file" class="form-control" (change)="onSelect($event)" id="file_pic">
+            </div>
+        </div>
+    
+    
+        <div class="row">
+            <input type="submit" value="Registered">
+        </div>  
+    </div> 
+</form>

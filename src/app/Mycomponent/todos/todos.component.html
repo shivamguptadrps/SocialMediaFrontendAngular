@@ -1,0 +1,83 @@
+<!-- <div style="display:flex">
+  <div class="fixedContainer">
+     <app-left-component></app-left-component>
+  </div>
+  <div>
+     <div *ngIf="isloaded">
+        <div class="tweetBox">
+           <form  [formGroup]="tweetdetails" (ngSubmit)="dotweet()">
+           <div class="tweetbox__input">
+              <img
+                 src="{{imgurl}}{{selfprofile.file_pic}}"
+                 alt=""
+                 />
+              <h4>{{selfprofile.title}}</h4>
+              <input type="text" formControlName="desc" placeholder="What's happening?" />
+           </div>
+           <div class="col-90" style="width:150px;padding-left: 30px;padding-top: 60px;">
+           </div>
+           <input type="file" class="form-control"  (change)="onSelect($event)"  id="file_pic">
+           <button class="tweetBox__tweetButton" >Tweet</button>
+           </form>
+        </div>
+        <div  *ngIf="this.post.length===0; else elseBlock">No Todo to Display </div>
+        <ng-template #elseBlock>
+           <div class="my-3 " *ngFor ="let todo of post">
+              <app-todo-item class="float-center" [todo] = "todo"  ></app-todo-item>
+           </div>
+        </ng-template>
+     </div>
+  </div>
+  <div >
+     <app-right-component ></app-right-component>
+     <div class="my-3 " *ngFor ="let todo of people">
+        <app-profile [todo] = "todo" ></app-profile>
+     </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="container-fluid">
+  <div class="col-md-2">
+    <div class="affix"><app-left-component></app-left-component></div></div>
+  <div class="col-md-6">  
+    <div *ngIf="isloaded">
+      <div class="tweetBox">
+         <form  [formGroup]="tweetdetails" (ngSubmit)="dotweet()">
+         <div class="tweetbox__input">
+           <div class="img-block">
+            <img
+               src="{{imgurl}}{{selfprofile.file_pic}}"
+               alt=""
+               />
+              </div>
+            <h4>{{selfprofile.title}}</h4>
+            <input type="text" formControlName="desc" placeholder="What's happening?" />
+         </div>
+         <div class="col-90" style="width:150px;padding-left: 30px;padding-top: 60px;">
+         </div>
+         <input type="file" class="form-control"  (change)="onSelect($event)"  id="file_pic">
+         <button class="tweetBox__tweetButton" >Tweet</button>
+         </form>
+      </div>
+      <div  *ngIf="this.post.length===0; else elseBlock">No Todo to Display </div>
+      <ng-template #elseBlock>
+         <div class="my-3 " *ngFor ="let todo of post">
+            <app-todo-item class="float-center" [todo] = "todo"  ></app-todo-item>
+         </div>
+      </ng-template>
+   </div>
+
+
+
+  </div>
+  <div class="col-md-4">
+    <app-right-component ></app-right-component>
+     <div class="my-3 " *ngFor ="let todo of people">
+        <app-profile [todo] = "todo" ></app-profile>
+     </div>
+  </div>
+
+</div>
